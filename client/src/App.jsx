@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
 import Row from './components/Row';
+import NavBar from './components/NavBar';
+import Jumbotron from './components/Jumbotron';
 import requests from './services/apiRequest';
 
 function App() {
   return (
     <div className='App'>
-      <h1>Netflix Clone</h1>
+      <NavBar />
+      <Jumbotron />
       <Row title='NETFLIX ORIGINALS' fetchUrl={requests.fetchNetflixOriginals} isLargeRow={true} />
       <Row title='Trending Now' fetchUrl={requests.fetchTrending} />
       <Row title='Top Rated' fetchUrl={requests.fetchTopRated} />

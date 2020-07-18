@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from './../../services/baseUrl';
+import axios from '../../services/baseUrl';
 import './styles.css';
 
 function Row({ title, fetchUrl, isLargeRow }) {
@@ -15,7 +15,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]);
 
-  console.table(movies);
+  //console.table(movies);
   return (
     <div className='row'>
       <h2>{title}</h2>

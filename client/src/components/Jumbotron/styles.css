@@ -1,0 +1,69 @@
+.jumbotron {
+  background-size: cover;
+  background-position: center center;
+  color: #ffffff;
+  object-fit: contain;
+  height: 600px;
+}
+
+.jumbotron_content {
+  margin-left: 30px;
+  padding-top: 240px;
+  height: 238px;
+}
+
+.jumbotron_title {
+  font-size: 3rem;
+  font-weight: 800;
+  padding-bottom: 0.3rem;
+}
+
+.jumbotron_description {
+  width: 45rem;
+  line-height: 1.3;
+  padding-top: 1.5rem;
+  font-size: 1.2rem;
+  max-width: 360px;
+  height: 80px;
+}
+
+.jumbotron_button_more {
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 0.2vw;
+  font-weight: 700;
+  outline: none;
+  margin-right: 1rem;
+  background-color: rgba(189, 189, 189, 0.7);
+  padding: 0.5rem 2rem;
+}
+
+.jumbotron_button_more:hover {
+  background-color: rgba(173, 173, 173, 0.5);
+  transition: all 0.2s;
+}
+
+.jumbotron_button_play {
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #000;
+  border: none;
+  border-radius: 0.2vw;
+  font-weight: 700;
+  outline: none;
+  margin-right: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 2rem;
+}
+
+.jumbotron_button_play:hover {
+  background-color: rgba(255, 253, 253, 0.7);
+  transition: all 0.2s;
+}
+
+.fade {
+  height: 7.7rem;
+  background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.6), #111);
+}
