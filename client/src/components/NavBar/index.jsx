@@ -23,8 +23,23 @@ function NavBar() {
         src='https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'
         alt='Netflix Logo'
       />
+      <div className='nav_links'>
+        <a href='' className='nav_link'>
+          Home
+        </a>
+        <a href='' className='nav_link'>
+          Series
+        </a>
+        <a href='' className='nav_link'>
+          Movies
+        </a>
 
-      <img className='nav_user' src='' alt='User Icon' />
+        <a href='' className='nav_link'>
+          Most Recent
+        </a>
+      </div>
+
+      <img className='nav_user' src={process.env.PUBLIC_URL + '/images/user.png'} alt='User Icon' />
     </div>
   );
 }

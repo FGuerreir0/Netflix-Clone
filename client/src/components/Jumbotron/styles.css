@@ -27,7 +27,13 @@
   height: 80px;
 }
 
+.jumbotron_buttons {
+  display: flex;
+}
+
 .jumbotron_button_more {
+  display: flex;
+  align-items: center;
   font-size: 1.3rem;
   cursor: pointer;
   color: #fff;
