@@ -57,3 +57,40 @@
   bottom: 0;
   background-color: rgba(172, 171, 171, 0.75);
 }
+
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.modal_content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.modal_description {
+  text-align: justify;
+  max-width: 35%;
+  margin-right: 60px;
+  line-height: 1.4em;
+}
+
+.modal_rating {
+  font-size: 25px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.modal_multimedia {
+  opacity: 0.3;
+  object-fit: contain;
+  background-size: cover;
+  background-position: center center fixed;
+  height: 100%;
+  z-index: -1;
+}
