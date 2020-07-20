@@ -22,8 +22,13 @@
 .nav_user {
   position: fixed;
   right: 55px;
-  width: 30px;
-  object-fit: contain;
+  display: flex;
+  flex-direction: row;
+  margin: auto 0;
+}
+
+.nav_user_item {
+  padding-left: 20px;
 }
 
 .nav_black {
@@ -40,4 +45,8 @@
   color: white;
   text-decoration: none;
   padding: 0px 10px;
+}
+
+.nav_link:hover {
+  font-weight: 700;
 }

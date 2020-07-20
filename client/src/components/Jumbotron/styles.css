@@ -3,7 +3,7 @@
   background-position: center center;
   color: #ffffff;
   object-fit: contain;
-  height: 600px;
+  height: 700px;
 }
 
 .jumbotron_content {
@@ -22,7 +22,7 @@
   width: 45rem;
   line-height: 1.3;
   padding-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: 360px;
   height: 80px;
 }
@@ -70,6 +70,7 @@
 }
 
 .fade {
-  height: 7.7rem;
-  background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.6), #111);
+  margin-top: 62px;
+  height: 10rem;
+  background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.7), #111);
 }

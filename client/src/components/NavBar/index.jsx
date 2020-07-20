@@ -1,6 +1,10 @@
 import React from 'react';
 import './styles.css';
 import { useState, useEffect } from 'react';
+import { IoMdNotifications } from 'react-icons/io';
+import { GiPresent } from 'react-icons/gi';
+
+import { GoSearch } from 'react-icons/go';
 
 function NavBar() {
   const [show, handleShow] = useState(false);
@@ -28,18 +32,31 @@ function NavBar() {
           Home
         </a>
         <a href='' className='nav_link'>
-          Series
+          TV Shows
         </a>
         <a href='' className='nav_link'>
           Movies
         </a>
 
         <a href='' className='nav_link'>
-          Most Recent
+          Latest
+        </a>
+
+        <a href='' className='nav_link'>
+          My List
         </a>
       </div>
-
-      <img className='nav_user' src={process.env.PUBLIC_URL + '/images/user.png'} alt='User Icon' />
+      <div className='nav_user'>
+        <GoSearch className='nav_user_item' size={23} color={'white'} />
+        <GiPresent className='nav_user_item' size={25} color={'white'} />
+        <IoMdNotifications className='nav_user_item' size={25} color={'white'} />
+        <img
+          className='nav_user_item'
+          style={{ width: '30px', objectFit: 'contain' }}
+          src={process.env.PUBLIC_URL + '/images/user.png'}
+          alt='User Icon'
+        />
+      </div>
     </div>
   );
 }
