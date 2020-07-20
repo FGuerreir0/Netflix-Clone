@@ -2,18 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../services/baseUrl';
 import './styles.css';
 import Popup from './../PopupInformation';
+import Modal from 'react-modal';
+import { AiFillCloseCircle } from 'react-icons/ai';
+
+Modal.setAppElement('#root');
 
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [show, setShow] = useState(false);
-  const [passMovie, setMovie] = useState({});
-
-  const handleclick = (movie) => {
-    let thruty = show;
-    setShow(!thruty);
-    setMovie(movie);
-    return <Popup movieData={passMovie} />;
-  };
 
   useEffect(() => {
     async function fetchData() {
@@ -25,7 +21,6 @@ function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]);
 
-  //console.table(movies);
   return (
     <div className='row'>
       <h2 className='row_title'>{title}</h2>
@@ -38,11 +33,23 @@ function Row({ title, fetchUrl, isLargeRow }) {
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
             alt={movie.name}
-            onClick={() => handleclick(movie)}
+            onClick={() => setShow(true)}
           />
         ))}
       </div>
-      {show ? <Popup movieData={passMovie} /> : ''}
+      <div className='modal_position'>
+        <Modal
+          isOpen={show}
+          onRequestClose={() => setShow(false)}
+          className='Modal'
+          overlayClassName='Overlay'
+        >
+          <div style={{ cursor: 'pointer' }}>
+            <AiFillCloseCircle onClick={() => setShow(false)} size={35} color='red' />
+          </div>
+          <p>Content</p>
+        </Modal>
+      </div>
     </div>
   );
 }
