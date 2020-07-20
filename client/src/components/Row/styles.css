@@ -26,3 +26,8 @@
 .posterLarge:hover {
   transform: scale(1.08);
 }
+
+.row_title {
+  margin-left: 20px;
+  font-size: 1.2rem;
+}
