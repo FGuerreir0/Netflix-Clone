@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../services/baseUrl';
 import './styles.css';
+import Popup from './../PopupInformation';
 
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
+  const [show, setShow] = useState(false);
+  const [passMovie, setMovie] = useState({});
+
+  const handleclick = (movie) => {
+    let thruty = show;
+    setShow(!thruty);
+    setMovie(movie);
+    return <Popup movieData={passMovie} />;
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -28,9 +38,11 @@ function Row({ title, fetchUrl, isLargeRow }) {
               isLargeRow ? movie.poster_path : movie.backdrop_path
             }`}
             alt={movie.name}
+            onClick={() => handleclick(movie)}
           />
         ))}
       </div>
+      {show ? <Popup movieData={passMovie} /> : ''}
     </div>
   );
 }

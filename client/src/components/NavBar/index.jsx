@@ -28,21 +28,21 @@ function NavBar() {
         alt='Netflix Logo'
       />
       <div className='nav_links'>
-        <a href='' className='nav_link'>
+        <a href='http://localhost:3000/' className='nav_link'>
           Home
         </a>
-        <a href='' className='nav_link'>
+        <a href='http://localhost:3000/' className='nav_link'>
           TV Shows
         </a>
-        <a href='' className='nav_link'>
+        <a href='http://localhost:3000/' className='nav_link'>
           Movies
         </a>
 
-        <a href='' className='nav_link'>
+        <a href='http://localhost:3000/' className='nav_link'>
           Latest
         </a>
 
-        <a href='' className='nav_link'>
+        <a href='http://localhost:3000/' className='nav_link'>
           My List
         </a>
       </div>

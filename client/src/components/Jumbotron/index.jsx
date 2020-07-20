@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from '../../services/baseUrl';
 import apirequests from '../../services/apiRequest';
 import './styles.css';
-import { GrPlayFill, GrCircleInformation } from 'react-icons/gr';
+import { GrPlayFill } from 'react-icons/gr';
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 
 function Jumbotron() {
