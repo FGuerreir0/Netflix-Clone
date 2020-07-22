@@ -50,3 +50,52 @@
 .nav_link:hover {
   font-weight: 700;
 }
+
+label {
+  display: none;
+}
+
+input {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  label {
+    display: block;
+    cursor: pointer;
+    font-size: 23px;
+    margin-top: -8px;
+  }
+
+  label:hover {
+    color: white;
+  }
+
+  .nav_links {
+    text-align: left;
+    width: 100%;
+    display: none;
+    left: 0;
+    margin-top: -10px;
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #111;
+    z-index: -2;
+  }
+  .nav_links a {
+    display: block;
+    margin: 0;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+  .nav_link_home {
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  #toggle:checked + .nav_links {
+    display: block;
+  }
+}

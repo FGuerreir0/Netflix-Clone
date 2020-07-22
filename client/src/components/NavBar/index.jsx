@@ -3,7 +3,6 @@ import './styles.css';
 import { useState, useEffect } from 'react';
 import { IoMdNotifications } from 'react-icons/io';
 import { GiPresent } from 'react-icons/gi';
-
 import { GoSearch } from 'react-icons/go';
 
 function NavBar() {
@@ -21,14 +20,16 @@ function NavBar() {
   }, []);
 
   return (
-    <div className={`nav ${show && 'nav_black'}`}>
+    <nav className={`nav ${show && 'nav_black'}`}>
       <img
         className='nav_logo'
         src='https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg'
         alt='Netflix Logo'
       />
+      <label for='toggle'>&#9776;</label>
+      <input type='checkbox' id='toggle' />
       <div className='nav_links'>
-        <a href='http://localhost:3000/' className='nav_link'>
+        <a href='http://localhost:3000/' className='nav_link nav_link_home'>
           Home
         </a>
         <a href='http://localhost:3000/' className='nav_link'>
@@ -46,6 +47,7 @@ function NavBar() {
           My List
         </a>
       </div>
+
       <div className='nav_user'>
         <GoSearch className='nav_user_item' size={23} color={'white'} />
         <GiPresent className='nav_user_item' size={25} color={'white'} />
@@ -57,7 +59,7 @@ function NavBar() {
           alt='User Icon'
         />
       </div>
-    </div>
+    </nav>
   );
 }
 
