@@ -67,14 +67,7 @@
 .modal_content {
   margin-top: 30px;
   display: flex;
-  flex-direction: row;
-}
-
-.modal_description {
-  text-align: justify;
-  max-width: 35%;
-  margin-right: 60px;
-  line-height: 1.4em;
+  flex-direction: column;
 }
 
 .modal_rating {
@@ -84,4 +77,21 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
+}
+
+.modal_description {
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 600px) {
+  .modal_content {
+    flex-direction: row;
+  }
+
+  .modal_description {
+    text-align: justify;
+    max-width: 35%;
+    margin-right: 60px;
+    line-height: 1.4em;
+  }
 }
