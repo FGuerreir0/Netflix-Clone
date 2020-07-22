@@ -4,6 +4,7 @@ import './styles.css';
 import Modal from 'react-modal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { MdStar } from 'react-icons/md';
+import YouTube from 'react-youtube';
 
 Modal.setAppElement('#root');
 
@@ -29,6 +30,15 @@ function Row({ title, fetchUrl, isLargeRow }) {
     }
     fetchData();
   }, [fetchUrl]);
+
+  const opts = {
+    height: '400px',
+    width: '100%',
+    playerVars: {
+      controls: 2,
+      autoplay: 0
+    }
+  };
 
   return (
     <div className='row'>
@@ -77,7 +87,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
               </div>
               <div>
                 <div className='modal_trailer'>
-                  <p>{showMovie.overview}</p>
+                  <YouTube videoId={'2g811Eo7K8U'} opts={opts} />
                 </div>
               </div>
             </div>
