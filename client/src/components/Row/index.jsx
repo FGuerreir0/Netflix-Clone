@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { MdStar } from 'react-icons/md';
 import YouTube from 'react-youtube';
+import movieTrailer from 'movie-trailer';
 
 Modal.setAppElement('#root');
 
@@ -12,10 +13,21 @@ function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
   const [show, setShow] = useState(false);
   const [showMovie, setShowMovie] = useState({});
+  const [trailer, setTrailer] = useState('');
 
   function display(newShowMovie) {
     if (newShowMovie !== showMovie) {
       setShowMovie(newShowMovie);
+      if (trailer) {
+        setTrailer('');
+      } else {
+        movieTrailer(newShowMovie?.title || '')
+          .then((response) => {
+            const urlParam = new URLSearchParams(new URL(response).search);
+            setTrailer(urlParam.get('v'));
+          })
+          .catch((error) => console.log(error));
+      }
     }
     setShow(true);
     console.log(showMovie);
@@ -32,7 +44,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
   }, [fetchUrl]);
 
   const opts = {
-    height: '400px',
+    height: '350px',
     width: '100%',
     playerVars: {
       controls: 2,
@@ -65,8 +77,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
         >
           <div>
             <div className='modal_header'>
-              <h3>{showMovie?.title || showMovie?.name || showMovie?.original_name}</h3>
-              <div style={{ cursor: 'pointer', opacity: '1 !important' }}>
+              <h3 style={{ zIndex: '1' }}>
+                {showMovie?.title || showMovie?.name || showMovie?.original_name}
+              </h3>
+              <div style={{ cursor: 'pointer' }}>
                 <AiFillCloseCircle onClick={() => setShow(false)} size={35} color='red' />
               </div>
             </div>
@@ -87,7 +101,14 @@ function Row({ title, fetchUrl, isLargeRow }) {
               </div>
               <div>
                 <div className='modal_trailer'>
-                  <YouTube videoId={'2g811Eo7K8U'} opts={opts} />
+                  {trailer && <YouTube videoId={trailer} opts={opts} />}
+                  {!trailer && (
+                    <img
+                      src={`https://image.tmdb.org/t/p/original/${showMovie?.backdrop_path}`}
+                      alt='movie'
+                      style={{ height: '350px', width: '100%', objectFit: 'contain' }}
+                    />
+                  )}
                 </div>
               </div>
             </div>
