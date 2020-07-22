@@ -65,7 +65,7 @@
 }
 
 .modal_content {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
 }
@@ -84,13 +84,4 @@
   align-items: center;
   justify-content: center;
   flex-direction: row;
-}
-
-.modal_multimedia {
-  opacity: 0.3;
-  object-fit: contain;
-  background-size: cover;
-  background-position: center center fixed;
-  height: 100%;
-  z-index: -1;
 }

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../services/baseUrl';
 import './styles.css';
-import Popup from './../PopupInformation';
 import Modal from 'react-modal';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { MdStar } from 'react-icons/md';
@@ -54,15 +53,10 @@ function Row({ title, fetchUrl, isLargeRow }) {
           className='Modal'
           overlayClassName='Overlay'
         >
-          <div
-            className='modal_multimedia'
-            style={{
-              backgroundImage: `url("https://image.tmdb.org/t/p/original${showMovie?.backdrop_path}")`
-            }}
-          >
+          <div>
             <div className='modal_header'>
               <h3>{showMovie?.title || showMovie?.name || showMovie?.original_name}</h3>
-              <div style={{ cursor: 'pointer' }}>
+              <div style={{ cursor: 'pointer', opacity: '1 !important' }}>
                 <AiFillCloseCircle onClick={() => setShow(false)} size={35} color='red' />
               </div>
             </div>
@@ -70,8 +64,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
             <div className='modal_content'>
               <div className='modal_description'>
                 <p>{showMovie.overview}</p>
-                <p style={{ marginTop: '10px' }}>
-                  <strong>Released at:</strong> {showMovie.first_air_date}
+                <p style={{ marginTop: '15px' }}>
+                  <strong>Released at:</strong>{' '}
+                  {showMovie?.first_air_date || showMovie?.release_date}
                 </p>
                 <div className='modal_rating'>
                   <p>{showMovie.vote_average} / 10 </p>

@@ -1,9 +1,8 @@
 import React from 'react';
 
-function Popup({ passMovie }) {
-  console.log(passMovie);
+function Popup() {
   return (
-    <div>
+    <div style={{ opacity: '1 !important' }}>
       <p>something</p>
     </div>
   );
