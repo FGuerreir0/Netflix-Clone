@@ -70,6 +70,7 @@
 }
 
 .fade {
+  display: block;
   margin-top: 62px;
   height: 10rem;
   background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.7), #111);

@@ -51,11 +51,12 @@
   font-weight: 700;
 }
 
-label {
+label,
+input {
   display: none;
 }
 
-input {
+.fade {
   display: none;
 }
 
