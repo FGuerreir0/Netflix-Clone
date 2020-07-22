@@ -29,21 +29,21 @@ function NavBar() {
       <label for='toggle'>&#9776;</label>
       <input type='checkbox' id='toggle' />
       <div className='nav_links'>
-        <a href='http://localhost:3000/' className='nav_link nav_link_home'>
+        <a href='https://fguerreir0-netflixclone.netlify.app/' className='nav_link nav_link_home'>
           Home
         </a>
-        <a href='http://localhost:3000/' className='nav_link'>
+        <a href='https://fguerreir0-netflixclone.netlify.app/' className='nav_link'>
           TV Shows
         </a>
-        <a href='http://localhost:3000/' className='nav_link'>
+        <a href='https://fguerreir0-netflixclone.netlify.app/' className='nav_link'>
           Movies
         </a>
 
-        <a href='http://localhost:3000/' className='nav_link'>
+        <a href='https://fguerreir0-netflixclone.netlify.app/' className='nav_link'>
           Latest
         </a>
 
-        <a href='http://localhost:3000/' className='nav_link'>
+        <a href='https://fguerreir0-netflixclone.netlify.app/' className='nav_link'>
           My List
         </a>
       </div>
